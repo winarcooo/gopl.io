@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"winarcooo/gopl.io/ch2/tempconv"
+	"github.com/winarcooo/gopl.io/ch2/tempconv"
 )
 
 func main() {
@@ -13,11 +13,10 @@ func main() {
 		t, err := strconv.ParseFloat(arg, 64)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "cf: %v\n", err)
-			os.exit(1)
+			os.Exit(1)
 		}
 		f := tempconv.Fahrenheit(t)
-		c := tempconv.Celcius(t)
-		fmt.Printf("%s = %s, %s = %s\n",
-			f, tempconv.FToC(f, c, tempconv.CToF(c)))
+		c := tempconv.Celsius(t)
+		fmt.Printf("%v = %v, %v = %v\n", f, tempconv.FToC(f), c, tempconv.CToF(c))
 	}
 }
