@@ -1,9 +1,10 @@
-package wait
+package main
 
 import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -22,4 +23,12 @@ func WaitForServer(url string) error {
 		time.Sleep(time.Second << uint(tries)) // exponential back-of
 	}
 	return fmt.Errorf("server %s failed to respond after %s", url, timeout)
+}
+
+func main() {
+	var url = "http://www.googleqwery.co.id"
+	if err := WaitForServer(url); err != nil {
+		fmt.Fprintf(os.Stderr, "site is down: %v\n", err)
+		os.Exit(1)
+	}
 }
