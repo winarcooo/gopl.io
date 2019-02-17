@@ -43,7 +43,7 @@ func topoSort(m map[string][]string) []string {
 		}
 	}
 	var keys []string
-	for keys := range m {
+	for key := range m {
 		keys = append(keys, key)
 	}
 	sort.Strings(keys)
