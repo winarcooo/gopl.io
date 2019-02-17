@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 // squares returns a function that returns
 // the next square number each time it is called.
@@ -14,8 +17,6 @@ func squares() func() int {
 
 func main() {
 	f := squares()
-	fmt.Println(f())
-	fmt.Println(f())
-	fmt.Println(f())
+	fmt.Println(reflect.TypeOf(f)) // func() int
 	fmt.Println(f())
 }
