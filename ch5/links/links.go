@@ -39,6 +39,6 @@ func Extract(url string) ([]string, error) {
 			}
 		}
 	}
-	ForEachNode(doc, visitNode, nil)
+	forEachNode(doc, visitNode, nil)
 	return links, nil
 }
