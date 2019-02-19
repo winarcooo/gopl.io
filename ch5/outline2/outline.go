@@ -1,4 +1,4 @@
-package outline2
+package links
 
 import (
 	"fmt"
@@ -17,6 +17,8 @@ func forEachNode(n *html.Node, pre, post func(n *html.Node)) {
 		post(n)
 	}
 }
+
+var depth int
 
 func endElement(n *html.Node) {
 	if n.Type == html.ElementNode {
