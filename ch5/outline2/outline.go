@@ -1,4 +1,4 @@
-package links
+package ch5
 
 import (
 	"fmt"
